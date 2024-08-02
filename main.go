@@ -20,9 +20,7 @@ func main() {
 		contactInfo: contactInfo{email: "jim@email.com", zipCode: 80801},
 	}
 	// Need to update pointer to get original object to change
-	jimPointer := &jim
-
-	jimPointer.updateFirstName("Jimmy")
+	jim.updateFirstName("John")
 	jim.print()
 }
 
