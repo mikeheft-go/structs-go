@@ -1,33 +1,14 @@
 package main
 
-import "fmt"
-
-type contactInfo struct {
-	email   string
-	zipCode int32
-}
-
-type person struct {
-	firstName string
-	lastName  string
-	contactInfo
-}
+import "structs-go/person"
 
 func main() {
-	jim := person{
-		firstName:   "Jim",
-		lastName:    "Party",
-		contactInfo: contactInfo{email: "jim@email.com", zipCode: 80801},
+	jim := person.Person{
+		FirstName:   "Jim",
+		LastName:    "Party",
+		ContactInfo: person.ContactInfo{Email: "jim@email.com", ZipCode: 80801},
 	}
 	// Need to update pointer to get original object to change
-	jim.updateFirstName("John")
-	jim.print()
-}
-
-func (p person) print() {
-	fmt.Printf("%+v", p)
-}
-
-func (pointer *person) updateFirstName(newFirstName string) {
-	(*pointer).firstName = newFirstName
+	jim.UpdateFirstName("John")
+	jim.Print()
 }
